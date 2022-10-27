@@ -1,7 +1,13 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.EntityFrameworkCore;
+using Tour_management.Data;
 
+var builder = WebApplication.CreateBuilder(args);
+string connection= builder.Configuration.GetConnectionString("DefaultConnection");
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<DbCon>(db=>db.UseSqlServer(connection,
+    sqlServerOptionsAction:x=>x.EnableRetryOnFailure().CommandTimeout(60)
+               ).EnableSensitiveDataLogging());
 
 var app = builder.Build();
 

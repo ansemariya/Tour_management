@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "ViewPackages";
+    Layout = "~/Views/Shared/User_layout.cshtml";
+}
+
+<link href="~/css/Packages.css" rel="stylesheet" />
+@model List<Package>
+
+<div class="home-content">
+    <div class="row">
+        <div class="col-4">
+            @foreach (var item in Model)
+            {
+
+
+                <section>
+                    <div class="card">
+                        <div class="top-content">
+                            <div class="travel-image">
+                                <img src="~/img/travel.jpg" alt="">
+                            </div>
+                            <div class="top-bar">
+                                <img class="top-icons" src="~/img/back-arrow.png" alt="Backarrow">
+                                <img class="top-icons" src="~/img/heart.png" alt="heart">
+                            </div>
+                        </div>
+                        <div class="mid-content">
+                            <div class="short-detail">
+                                <h3>@item.nameOfPackage</h3>
+                                <span>
+                                    <img src="~/img/star.png" alt=""> 4.5
+                                </span>&nbsp;&nbsp;
+                                <span>
+                                    <img src="~/img/cloudy.png" alt=""> 17 C
+                                </span>&nbsp;&nbsp;
+                                <span>
+                                    <img src="~/img/plane.png" alt=""> 17Hrs
+                                </span>
+                            </div>
+                        </div>
+                        <div class="desc-content">
+                            <div class="desc-nav">
+                                <span>@item.destination1</span>
+                                <span>@item.destination2</span>
+                                <span>@item.destination3</span>
+                            </div>
+                            <p>
+                                @item.description
+                                <a>Know More</a>
+                            </p>
+                        </div>
+                        <div class="bottom-content">
+                            <div class="desc-nav">
+                                <p>$@item.price/<span>@item.persons Persons</span></p>
+                            </div>
+                        </div>
+                        <div class="row bottom-content">
+
+                            <a asp-controller="User" asp-action="BookTrip"><button id="book">Book My Trip</button></a>
+                            
+                        </div>
+                    </div>
+                </section>
+
+            }
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,151 @@
+﻿@{
+    ViewData["Title"] = "CreatePackage";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+@model Package
+<head>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true" />
+</head>
+
+    <!------ Include the above in your HEAD tag ---------->
+<div class="home-content">
+
+    
+        <div class="container">
+            <div class="title">Create New Package</div>
+            <div class="content">
+            <form action="packageSubmit" method="post">
+                    <div class=" user-details">
+                        
+                        <div class="input-box ">
+                            <span class="details">Name Of Package</span>
+                        <input type="text" asp-for="nameOfPackage" placeholder="Enter name of package" required>
+                        </div>
+                        <div class="input-box">
+                        <span class="details">Trip duration in days</span>
+                        <input type="text" asp-for="duration" placeholder="Duration" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">No of Persons</span>
+                            <input type="text" asp-for="persons" placeholder="Number of persons" required>
+                        </div>
+                    <div class="input-box">
+                        <span class="details">1)Destination</span>
+                        <input type="text" asp-for="destination1" placeholder="Add first destination" required>
+                    </div>
+                        <div class="input-box">
+                            <span class="details">Price</span>
+                            <input type="text" asp-for="price" placeholder="Price of package" required>
+                        </div>
+                       
+                    
+                    <div class="input-box">
+                        <span class="details">2)Destination</span>
+                        <input type="text" asp-for="destination2" placeholder="Add next destination " >
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Description</span>
+                        <input type="text" asp-for="description" placeholder="About Package..." required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">3)Destination</span>
+                        <input type="text" asp-for="destination3" placeholder="Add next destination" >
+                    </div>
+                    
+                    <div class="input-box">
+                        <span class="details">Coverpicture</span>
+                        <input type="file" asp-for="coverpicture" placeholder="Add cover picture">
+                    </div>
+                   
+                    <div class="input-box">
+                        <input type="radio" name="action" id="dot-1">
+                        <input type="radio" name="action" id="dot-2">
+                        <span class="gender-title">Action</span>
+                        <div class="category">
+                            <label for="dot-1">
+                                <span class="dot one"></span>
+                                <span class="gender">Active</span>
+                            </label>
+                            <label for="dot-2">
+                                <span class="dot two"></span>
+                                <span class="gender">Inactive</span>
+                            </label>
+                            
+                        </div>
+                    </div>
+                </div>
+                    <div class="button">
+                    <input class="submit-btn" type="submit" value="Create">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+   <!-- <section class="get-in-touch">
+        <h1 class="title">Create new package</h1>
+        <form class="contact-form row" action="packageSubmit" method="post">
+            <div class="form-field col-s-8">
+                <input id="name" asp-for="nameOfPackage" class="input-text js-input" type="text"  placeholder=" Name of Package" required>
+                
+            </div>
+            <div class="form-field col-s-4">
+                <input id="company" asp-for="duration" class="input-text js-input" type="text" required>
+                <label class="label" for="company">8</label>
+            </div>
+            <div class="form-field col-s-3">
+                <input id="price" asp-for="price" class="input-text js-input" type="text" required>
+                <label class="label" for="price">Price</label>
+            </div>
+            <div class="form-field col-s-3">
+                <input id="perspons" asp-for="persons" class="input-text js-input" type="text" required>
+                <label class="label" for="noofpersons"><i class="bi bi-people-fill"></i> No of Persons</label>
+            </div>
+            <div class="form-field col-s-3">
+                <input id="perspons" asp-for="destination1" class="input-text js-input" type="text" required>
+                <label class="label" for="noofpersons"><i class="bi bi-people-fill"></i> 1) Destination</label>
+            </div>
+            <div class="form-field col-s-3">
+                <input id="perspons" asp-for="destination2" class="input-text js-input" type="text" required>
+                <label class="label" for="noofpersons"><i class="bi bi-people-fill"></i> 2) Destination</label>
+            </div>
+            <div class="form-field col-s-3">
+                <input id="perspons" asp-for="destination3" class="input-text js-input" type="text" required>
+                <label class="label" for="noofpersons"><i class="bi bi-people-fill"></i> 3) Destination</label>
+            </div>
+           
+           
+            <div class="form-field col-s-12 ">
+                <input id="image" asp-for="coverpicture" class="input-text js-input form-control" type="file" required placeholder="Add Cover picture">
+            </div>
+            
+            
+            
+            <div class="form-field col-s-12">
+                <input id="descripption" asp-for="description" class="input-text js-input" type="text" required>
+                <label class="label" for="description">Description</label>
+            </div>
+            <div class="form-field col-s-12">
+                <input class="submit-btn" type="submit" value="Create">
+            </div>
+        </form>
+    </section>-->
+
+    </div>
+         
+
+
+
+    
+
