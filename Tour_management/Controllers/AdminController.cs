@@ -16,7 +16,11 @@ namespace Tour_management.Controllers
         {
             return View();
         }
-        
+        public async Task<IActionResult> ViewUsers()
+        {
+            var users = await _dbCon.User.ToListAsync();
+            return View("ViewUsers",users);
+        }
 
         public async Task<IActionResult> packageSubmit(Package data)
         {

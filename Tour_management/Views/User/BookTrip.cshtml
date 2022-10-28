@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="~/css/BookTrip.css" asp-append-version="true" />
 <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' rel='stylesheet'>
 
-@model Booking
+@model Package
 <div class="home-content">
    
         
@@ -23,16 +23,17 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input class="form-control" type="text" placeholder="Name of package">
+                                                <input class="form-control" asp-for="nameOfPackage" type="text" placeholder="Name of package">
                                                 <span class="form-label">Package</span>
                                              </div>
                                          </div>
                                         <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input class="form-control" type="email" placeholder="Email">
-                                                <span class="form-label">Email here</span>
-                                            </div>
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" placeholder="Email here" value="@ViewBag.UserDetails.email">
+                                            <span class="form-label">Email</span>
                                         </div>
+                                    </div>
+  
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4">
@@ -58,19 +59,19 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <input class="form-control" type="text" placeholder="Persons">
+                                        <input class="form-control" asp-for="persons"  type="text" placeholder="Persons">
                                                 <span class="form-label">No of Persons</span>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <input class="form-control" type="text" placeholder="Rate">
+                                        <input class="form-control" asp-for="price"  type="text" placeholder="Rate">
                                                 <span class="form-label">Amount</span>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <input class="form-control" type="text" placeholder="Duration">
+                                        <input class="form-control" asp-for="duration" type="text" placeholder="Duration">
                                                 <span class="form-label">Duration</span>
                                             </div>
                                         </div>

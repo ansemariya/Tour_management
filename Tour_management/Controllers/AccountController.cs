@@ -17,6 +17,11 @@ namespace Tour_management.Controllers
              
             return View();
         }
+        public IActionResult login()
+        {
+
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> signup(User data)
         {
@@ -28,10 +33,38 @@ namespace Tour_management.Controllers
             var submit = await _dbCon.User.AddAsync(data);
             await _dbCon.SaveChangesAsync();
             ModelState.Clear();
-            ViewBag.SuccessMessage = "Registration Successful.";
             
-            return View("signup");
 
+            return RedirectToAction("login", "Account");
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> login(User log)
+        {
+            
+            if(_dbCon.User.Any(x => log.username == log.username && x.password == log.password))
+            {
+                if(log.username=="Admin" && log.password == "Admin@123")
+                {
+                    HttpContext.Session.SetInt32("user_id", 2);
+                    ViewBag.LoginMessage = "Successfully login.";
+                    return RedirectToAction("Packages", "Admin");
+                }
+                else
+                {
+                    int user_id=_dbCon.User.Where(x => x.username == log.username).Select(y=>y.user_id).FirstOrDefault();
+                    HttpContext.Session.SetInt32("user_id",user_id);
+                    ViewBag.LoginMessage = "Successfully login.";
+                    return RedirectToAction("ViewPackages", "User");
+                }         
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Wrong username & Password.";
+                return View("login", log);
+            }
+            
+            
         }
     }
 }

@@ -8,6 +8,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DbCon>(db=>db.UseSqlServer(connection,
     sqlServerOptionsAction:x=>x.EnableRetryOnFailure().CommandTimeout(60)
                ).EnableSensitiveDataLogging());
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout= TimeSpan.FromSeconds(60);       
+});
 
 var app = builder.Build();
 
@@ -18,8 +22,9 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
+app.UseSession();
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();

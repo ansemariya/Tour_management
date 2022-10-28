@@ -18,15 +18,14 @@ namespace Tour_management.Controllers
             var packages = await _dbCon.Package.ToListAsync();
             return View("ViewPackages", packages);
         }
-        public IActionResult BookTrip()
+        
+        public async Task<IActionResult> BookTrip(int pack_id)
         {
-            return View();
-        }
-        public async Task<IActionResult> booking(Booking data)
-        {
-            var submit = await _dbCon.Booking.AddAsync(data);
-            await _dbCon.SaveChangesAsync();
-            return View("ViewPackages");
+            int user_id = (int)HttpContext.Session.GetInt32("user_id");
+            var package = await _dbCon.Package.Where(x=>x.pack_id==pack_id).FirstOrDefaultAsync();
+            ViewBag.UserDetails = _dbCon.User.Where(x => x.user_id == user_id).FirstOrDefault();
+            return View(package);
+            
 
         }
     }
