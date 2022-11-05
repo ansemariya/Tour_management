@@ -10,7 +10,7 @@ namespace Tour_management.Models
         public string username { get; set; }
         public string password { get; set; }
         [DisplayName("Confirm Password")]
-        [Compare("password")]
+       
         public string Confirmpassword { get; set; }
         public string email { get; set; }
         public int mobile { get; set; }
@@ -20,6 +20,7 @@ namespace Tour_management.Models
         public string city { get; set; }
         public string state { get; set; }
         public string country { get; set; }
+        public Nullable<int> status { get; set; }
 
     }
 }

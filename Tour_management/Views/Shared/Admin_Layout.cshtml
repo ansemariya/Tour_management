@@ -16,8 +16,8 @@
 <body>
     <div class="sidebar">
         <div class="logo-details">
-            <i class='bx bxl-c-plus-plus'></i>
-            <span class="logo_name">CodingLab</span>
+            <i class="bi bi-geo-alt-fill"></i>
+            <span class="logo_name">Tourist</span>
         </div>
         <ul class="nav-links">
             <li>
@@ -27,7 +27,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a asp-controller="Admin" asp-action="ApproveUser">
                     <i class='bx bx-user'></i>
                     <span class="links_name">Approve requests</span>
                 </a>
@@ -51,7 +51,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a asp-controller="Admin" asp-action="Bookings">
                     <i class='bx bx-list-ul'></i>
                     <span class="links_name">Bookings</span>
                 </a>
@@ -68,15 +68,8 @@
                     <span class="links_name">Payments</span>
                 </a>
             </li>
-
-            <li>
-                <a href="#">
-                    <i class='bx bx-cog'></i>
-                    <span class="links_name">Settings</span>
-                </a>
-            </li>
             <li class="log_out">
-                <a href="#">
+                <a asp-controller="Home" asp-action="Index">
                     <i class='bx bx-log-out'></i>
                     <span class="links_name">Log out</span>
                 </a>
@@ -95,7 +88,7 @@
             </div>
             <div class="profile-details">
                 <img src="images/profile.jpg" alt="">
-                <span class="admin_name">Prem Shahi</span>
+                <span class="admin_name">Admin</span>
                 <i class='bx bx-chevron-down'></i>
             </div>
         </nav>

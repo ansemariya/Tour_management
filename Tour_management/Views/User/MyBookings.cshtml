@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "MyBookings";
+    Layout = "~/Views/Shared/User_layout.cshtml";
+}
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+@model IEnumerable<Tour_management.Models.Booking>
+<div class="home-content">
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.pack_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.booking_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.checkin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.checkout)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.username)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.pack_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.booking_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.checkin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.checkout)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.book_id">Edit</a> |
+               
+                <a asp-action="Delete" asp-route-id="@item.book_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+</div>
+
+

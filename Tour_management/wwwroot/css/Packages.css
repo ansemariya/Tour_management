@@ -150,9 +150,11 @@
     }
 #edit {
     background-color: darkblue;
+    width:100px;
 }
 #delete {
     background-color: red;
+    width: 100px;
 }
 .bottom-content #book {
     margin-left: 12px;
